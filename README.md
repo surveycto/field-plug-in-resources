@@ -34,3 +34,7 @@ These field plug-ins reproduce the default behavior of regular SurveyCTO field t
 
 * [Field plug-in definition](docs/plug-in-definition.md)
 * [API reference](docs/api-reference.md)
+
+## Additional resources
+
+* [Full list of all field plug-ins developed by SurveyCTO](https://github.com/SurveyCTO-field-plug-ins)
