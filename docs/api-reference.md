@@ -161,22 +161,27 @@ These properties and functions only apply to certain field types.
     >     {{/CHOICES}}
     > *Note: the above code will iterate over the list of choices, and create an \<h3> element for each choice in the choice list.*  
 
-* `CHOICE_INDEX`  
+  * `CHOICE_VALUE`  
+    This is the choice value, as it will appear in the exported data.  
+    `{{CHOICE_VALUE}}` in HTML  
+    `fieldProperties.CHOICES[i].CHOICE_VALUE` in JS
+
+  * `CHOICE_INDEX`  
     This is the index number of the choice, based on the order it should appear in the form. Choice index values start at 0 for the first choice, then 1 for the second choice, etc…  
     `{{CHOICE_INDEX}}` in HTML  
     `fieldProperties.CHOICES[i].CHOICE_INDEX` in JS
 
-* `CHOICE_LABEL`  
+  * `CHOICE_LABEL`  
     This is the choice label, in the currently-selected language.  
     `{{CHOICE_LABEL}}` in HTML  
     `fieldProperties.CHOICES[i].CHOICE_LABEL` in JS  
 
-* `CHOICE_SELECTED`  
+  * `CHOICE_SELECTED`  
     Whether or not the current choice is selected (true|false).  
     `{{CHOICE_SELECTED}}` in HTML  
     `fieldProperties.CHOICES[i].CHOICE_SELECTED` in JS
 
-* `CHOICE_IMAGE`  
+  * `CHOICE_IMAGE`  
     If the choice has an image, this will return its filename.  
     `{{CHOICE_IMAGE}}` in HTML  
     `fieldProperties.CHOICES[i].CHOICE_IMAGE` in JS  
@@ -186,18 +191,21 @@ These properties and functions only apply to certain field types.
 >
 >     CHOICES:[ 
 >       { 
+>           CHOICE_VALUE: "opt_1",
 >           CHOICE_INDEX: 0,
 >           CHOICE_LABEL: "Option 1",
 >           CHOICE_SELECTED: true|false,
 >           CHOICE_IMAGE: "option1.png"
 >       },
 >       { 
+>           CHOICE_VALUE: "opt_2",
 >           CHOICE_INDEX: 1,
 >           CHOICE_LABEL: "Option 2",
 >           CHOICE_SELECTED: true|false,
 >           CHOICE_IMAGE: "option2.png"
 >       },
 >         { 
+>           CHOICE_VALUE: "opt_3",
 >           CHOICE_INDEX: 2,
 >           CHOICE_LABEL: "Option 3",
 >           CHOICE_SELECTED: true|false,
@@ -207,11 +215,11 @@ These properties and functions only apply to certain field types.
 
 ### Provided JS functions
 
-* `setAnswer(newSelectedChoiceIndex)` (required)  
+* `setAnswer(newSelectedChoiceValue)` (required)  
     This should be called to change the field's answer.  
 
-    For select_one fields, the choice index of the selected choice should be passed as a single number. If a non-valid choice index is passed, the value will default to null/no-selected choice. Example: `setAnswer(2)`  
+    For *select_one* fields, the choice value of the selected choice should be passed as a single value. If a non-valid choice value is passed, the value will default to null/no-selected choice. Example: `setAnswer(opt_1)`  
 
-    For select_multiple fields, the choice indexes of all selected choices should be passed as a space-separated list of numbers.  If a non-valid list of choice indexes is passed, the value will default to null/no-selected choice. Example: `setAnswer(0 2 3)`  
+    For *select_multiple* fields, the choice values of all selected choices should be passed as a space-separated list of values.  If a non-valid list of choice values is passed, the value will default to null/no-selected choice. Example: `setAnswer(opt_1 opt_3 opt_2)`  
 
     *Note: this should be called whenever it’s desired to save a value for the field, i.e, the last value set here will persist even after skipping the field, saving the form, changing languages, navigating using the Go-To UI, etc.*
