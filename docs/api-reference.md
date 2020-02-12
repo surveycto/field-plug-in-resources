@@ -2,30 +2,52 @@
 
 ## Field properties
 
-*Note: properties can be used in HTML as Mustache tags, or in JS as attributes of the fieldProperties object.*
+When a field is rendered with a field plug-in, a set of field properties are made available to the field plug-in. This set contains all the information about the field from the form definition and the current form instance. You can access properties of this object in two different ways: special Mustache tags in the HTML, or as attributes of the *fieldProperties* object in JS. In general, these will all follow the same structure:
 
-*Note: to ensure compatibility with HTML in field labels and field hints, it is best to use three brackets, like this: `{{{LABEL}}}`. While “{{LABEL}}” will work when the field label is only plain text, it will not work properly if the field label contains HTML (because the HTML tags will be escaped).*
+| Property name | How to reference in HTML | How to reference in JS |
+| ---- | ---- | ---- |
+| EXAMPLE | `{{EXAMPLE}}` | `fieldProperties.EXAMPLE` |
 
-* `LABEL`  
-    The field label from the form definition in the currently-selected language.  
-    `{{{LABEL}}}` in HTML  
-    `fieldProperties.LABEL` in JS  
+*Note: when using Mustache tags to return anything which might contain HTML, you should use `{{{three brackets}}}` instead of two. Field **labels** and field **hints** can contain HTML, so you should always use `{{{LABEL}}}` instead of `{{LABEL}}`. While “{{LABEL}}” will work when the field label is only plain text, it will not work properly if the field label contains HTML (because the HTML tags will be escaped).*
 
-* `HINT`  
-    The field hint from the form definition in the currently-selected language.  
-    `{{{HINT}}}` in HTML  
-    `fieldProperties.HINT` in JS  
+* `FIELDTYPE`  
+    The simple field type of the current field, ignoring aliases and other things which may be in the *type* column in the form definition. Possible values are: `text`, `integer`, `decimal`, `select_one`, and `select_multiple`.
 
 * `LANGUAGE`  
-    The currently-selected language.  
-    `{{LANGUAGE}}` in HTML  
-    `fieldProperties.LANGUAGE` in JS
+    The currently-selected language.
+
+* `LABEL`  
+    The field label from the form definition in the currently-selected language.
+
+* `HINT`  
+    The field hint from the form definition in the currently-selected language.
+
+* `APPEARANCE`  
+    The contents of the *appearance* column from the form definition.
+
+* `CONSTRAINTMESSAGE`  
+    The message which will be shown if a constraint is configured and violated. This will contain the default SurveyCTO constraint message if there is no *constraint message* specified in the form definition.
+
+* `REQUIREDMESSAGE`  
+    The message which will be shown if a field is marked *required* and the user attempts to skip it without giving an answer. This will contain the default SurveyCTO required message if there is no *required message* specified in the form definition.
+
+* `READONLY`  
+    A boolean representing whether or not a field is read only.
+
+* `MEDIAIMAGE`  
+    If there is an image file specified in the *media:image* column in the form definition, this will return the filename.
+
+* `MEDIAAUDIO`  
+    If there is an audio file specified in the *media:audio* column in the form definition, this will return the filename.
+
+* `MEDIAVIDEO`  
+    If there is a video file specified in the *media:video* column in the form definition, this will return the filename.
 
 * `METADATA`  
-    This is a place for you to store session metadata about the field. This value will be saved and remain accesible to your field plug-in until the form is finalized. This value will not show up in the submitted form data.  
-    `{{METADATA}}` in HTML  
-    `fieldProperties.METADATA` in JS  
+    A place to store session metadata about the field. This value will be saved and remain accesible to your field plug-in until the form is finalized. This value will not show up in the submitted form data.  
     *Note: field metadata will persist while navigating around different fields in the form, exiting and resuming the form, even resuming from a crashed form.*
+
+*Note:* there may be additional properties attached to the field as well, which are specific to the field type. See the *Field-specific APIs* section below.
 
 ## CSS Classes
 
