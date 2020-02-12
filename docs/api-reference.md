@@ -17,9 +17,15 @@
     `fieldProperties.HINT` in JS  
 
 * `LANGUAGE`  
-    The currently-selected language.
+    The currently-selected language.  
     `{{LANGUAGE}}` in HTML  
     `fieldProperties.LANGUAGE` in JS
+
+* `METADATA`  
+    This is a place for you to store session metadata about the field. This value will be saved and remain accesible to your field plug-in until the form is finalized. This value will not show up in the submitted form data.  
+    `{{METADATA}}` in HTML  
+    `fieldProperties.METADATA` in JS  
+    *Note: field metadata will persist while navigating around different fields in the form, exiting and resuming the form, even resuming from a crashed form.*
 
 ## CSS Classes
 
@@ -53,7 +59,7 @@
 
 ## Provided JS functions
 
-Provided JS functions are ones that are provided to you, so that you may call them from your code. 
+Provided JS functions are ones that are provided to you, so that you may call them from your code.
 
 * `goToPrevousField()`  
     Moves to the previous question, skipping any validation for the current field's answer.  
@@ -73,6 +79,12 @@ Provided JS functions are ones that are provided to you, so that you may call th
 * `showSoftKeyboard()` (Android only)  
     Displays Android's soft keyboard.
 
+* `setFieldMetadata()`  
+    Stores a string in the metadata for that field.  
+
+* `getFieldMetadata()`  
+    Gets the current value stored in the field's metadata.
+
 ## Called JS functions
 
 Called JS functions are called by the form, and should be handled by your code.
@@ -87,7 +99,6 @@ Called JS functions are called by the form, and should be handled by your code.
     >     function clearAnswer() {
     >       input.value = '';
     >     }
-
 
 * `handleRequiredMessage(message)`  
     If defined, this will be called when a required field is left empty. The message parameter will contain the required message in the user-selected language.  
