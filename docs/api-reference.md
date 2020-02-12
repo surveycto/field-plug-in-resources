@@ -47,6 +47,35 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     A place to store session metadata about the field. This value will be saved and remain accesible to your field plug-in until the form is finalized. This value will not show up in the submitted form data.  
     *Note: field metadata will persist while navigating around different fields in the form, exiting and resuming the form, even resuming from a crashed form.*
 
+* `PARAMETERS`  
+    Form designers may pass custom parameters to your field plug-in. Each parameter will be a key/value pair defined in the *appearance* column of the form definition. Parameter values will be evaluated by the form before the field is rendered (before your field plug-in code is loaded), so you can use `${field}` references and expressions in parameters.  
+    > **EXAMPLE (STATIC VALUES)**  
+    > Field appearance:
+    > 
+    >      custom-my-plugin(A=123.45; B='some static string')
+    > `fieldProperties` object:  
+    >
+    >     ...
+    >     "PARAMETERS":[
+    >       {"key":"A","value":123.45},
+    >       {"key":"B","value":"some static string"}
+    >     ]
+    >     ...
+
+    > **EXAMPLE (DYNAMIC VALUES)**  
+    > Field appearance:
+    > 
+    >      custom-my-plugin(A=${firstname}; B=concat(${firstname}, ' ', ${lastname}))
+    > `fieldProperties` object:  
+    >
+    >     ...
+    >     "PARAMETERS":[
+    >       {"key":"A","value":"Jane"},
+    >       {"key":"B","value":"Jane Doe"}
+    >     ]
+    >     ...
+
+
 *Note:* there may be additional properties attached to the field as well, which are specific to the field type. See the *Field-specific APIs* section below.
 
 ## CSS Classes
