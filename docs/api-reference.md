@@ -48,7 +48,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     *Note: field metadata will persist while navigating around different fields in the form, exiting and resuming the form, even resuming from a crashed form.*
 
 * `PARAMETERS`  
-    Form designers may pass custom parameters to your field plug-in. Each parameter will be a key/value pair defined in the *appearance* column of the form definition. Parameter values will be evaluated by the form before the field is rendered (before your field plug-in code is loaded), so you can use `${field}` references and expressions in parameters.  
+    Form designers may pass custom parameters to your field plug-in. Each parameter will be a key/value pair defined in the *appearance* column of the form definition. Parameter values will be evaluated by the form before the field is rendered (before your field plug-in code is loaded), so you can use `${field}` references and expressions.  
     > **EXAMPLE (STATIC VALUES)**  
     > Field appearance:
     > 
@@ -59,7 +59,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     >     "PARAMETERS":[
     >       {"key":"A","value":123.45},
     >       {"key":"B","value":"some static string"}
-    >     ]
+    >     ],
     >     ...
 
     > **EXAMPLE (DYNAMIC VALUES)**  
@@ -72,7 +72,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     >     "PARAMETERS":[
     >       {"key":"A","value":"Jane"},
     >       {"key":"B","value":"Jane Doe"}
-    >     ]
+    >     ],
     >     ...
 
 
