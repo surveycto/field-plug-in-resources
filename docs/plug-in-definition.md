@@ -33,7 +33,7 @@ This file contains all the meta-information about the plug-in. Here is a list of
 
 | Attribute | Description |
 | ------------- |------------- |
-| `name` * | A human-readable version of the plug-in name |
+| `name` * | A human-readable version of the plug-in name *(maximum length 100 characters)*|
 | `author` * | The author(s) of the plug-in |
 | `version` * | The plug-in version. This should follow the [semver](https://semver.org/) spec. This will be used when updating plug-ins |
 | `supportedFieldTypes` * | A list of field types supported by the plug-in. Currently, these may only include the following options: `text`, `integer`, `decimal`, `select_one`, `select_multiple`. |
