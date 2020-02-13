@@ -57,8 +57,14 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     >
     >     ...
     >     "PARAMETERS":[
-    >       {"key":"A","value":123.45},
-    >       {"key":"B","value":"some static string"}
+    >       {  
+    >           "key":"A",  
+    >           "value":123.45  
+    >       },
+    >       {
+    >           "key":"B",
+    >           "value":"some static string"  
+    >       }
     >     ],
     >     ...
 
@@ -70,8 +76,14 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     >
     >     ...
     >     "PARAMETERS":[
-    >       {"key":"A","value":"Jane"},
-    >       {"key":"B","value":"Jane Doe"}
+    >       {
+    >           "key":"A",
+    >           "value":"Jane"
+    >       },
+    >       {
+    >           "key":"B",
+    >           "value":"Jane Doe"
+    >       }
     >     ],
     >     ...
 
