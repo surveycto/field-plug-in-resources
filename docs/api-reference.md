@@ -52,7 +52,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     > **EXAMPLE (STATIC VALUES)**  
     > Field appearance:
     > 
-    >      custom-my-plugin(A=123.45; B='some static string')
+    >      custom-my-plugin(A=123.45, B='some static string')
     > `fieldProperties` object:  
     >
     >     ...
@@ -71,7 +71,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     > **EXAMPLE (DYNAMIC VALUES)**  
     > Field appearance:
     > 
-    >      custom-my-plugin(A=${firstname}; B=concat(${firstname}, ' ', ${lastname}))
+    >      custom-my-plugin(A=${firstname}, B=concat(${firstname}, ' ', ${lastname}))
     > `fieldProperties` object:  
     >
     >     ...
