@@ -1,5 +1,7 @@
 # Field plug-in definition
 
+Field plug-ins themselves are just zip files, with “.fieldplugin” added to the file extension (for example: “myfirstplugin.fieldplugin.zip”).
+
 We will be using the term “plug-in definition” interchangeably with “field plug-in” to refer to the x.fieldplugin.zip file and all of its contents. Similarly to how a form definition is a file (or set of files) which contains all the information needed to load and fill out a form, a plug-in definition is a .zip file which contains all the information needed to use the field plug-in.
 
 > **File names for field plug-ins**

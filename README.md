@@ -4,9 +4,7 @@ This repository contains the developer documentation for SurveyCTO field plug-in
 
 ## Overview
 
-Field plug-ins override the default webview that is loaded when a field is shown in SurveyCTO Collect. When filling out a form, if you arrive at a field which is using a field plug-in, the plug-in’s code will be loaded and processed instead of the default SurveyCTO code.
-
-Field plug-ins themselves are just zip files, with “.fieldplugin” added to the file extension (for example: “myfirstplugin.fieldplugin.zip”).
+Field plug-ins override the default screen that is loaded when a field is shown in SurveyCTO Collect. When filling out a form, if you arrive at a field which is using a field plug-in, the plug-in’s code will be loaded and processed instead of the default SurveyCTO code.
 
 ## Getting started
 
@@ -20,15 +18,14 @@ In order to use a field plug-in, you need to do two things:
 > **EXAMPLE**  
 > Let’s say you created a field plug-in with the filename “myplugin.fieldplugin.zip”. You would enter `custom-myplugin` in the appearance column for each field that should use it.
 
-## Basic templates
+## Baseline templates
 
 These field plug-ins reproduce the default behavior of regular SurveyCTO field types. There should be virtually no differences in field appearance/behavior when these are used. They are meant to be used as starter templates for you to use when developing your own field plug-ins.
 
-* [Basic text field](https://github.com/SurveyCTO-field-plug-ins/basic-text-field)
-* [Basic integer field](https://github.com/SurveyCTO-field-plug-ins/basic-text-field)
-* [Basic decimal field](https://github.com/SurveyCTO-field-plug-ins/basic-text-field)
-* [Basic select-one field](https://github.com/SurveyCTO-field-plug-ins/basic-text-field)
-* [Basic select-multiple field](https://github.com/SurveyCTO-field-plug-ins/basic-text-field)
+* [Baseline text field](https://github.com/SurveyCTO-field-plug-ins/baseline-text)
+* [Baseline select_one field](https://github.com/SurveyCTO-field-plug-ins/baseline-select_one)
+
+*Note: we are actively working on developing baseline plug-ins for each supported field type. This list will soon grow to contain all of the following field types: text, decimal, integer, select_one, and select_multiple.*
 
 ## Developer documentation
 
