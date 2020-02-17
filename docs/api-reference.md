@@ -126,13 +126,13 @@ Provided JS functions are ones that are provided to you, so that you may call th
 
 * `goToNextField()`  
     Moves to the next question. By default, this will attempt to validate the current field's response before moving to the next field.
-  * `goToNextField(skipValidation)` will override the default behavior, and will skip the validation of the current field's response.
-  * `goToNextField(withValidation)` will function exactly the same as `goToNextField()`.
+  * `goToNextField(true)` will override the default behavior, and will skip the validation of the current field's response.
+  * `goToNextField(false)` will function exactly the same as `goToNextField()`.
 
 * `goToPreviousField()`  
    Moves back to the previous question. By default, this will *not* attempt to validate the current field's response.  
-  * `goToPreviousField(skipValidation)` will function exactly the same as `goToPreviousField()`.
-  * `goToPreviousField(withValidation)` will override the default behavior, and attempt to validate the current response before moving to the previous field.
+  * `goToPreviousField(true)` will override the default behavior, and attempt to validate the current response before moving to the previous field.
+  * `goToPreviousField(false)` will function exactly the same as `goToPreviousField()`.
 
 * `showSoftKeyboard()` (Android only)  
     Displays Android's soft keyboard.
