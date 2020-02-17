@@ -147,7 +147,7 @@ Provided JS functions are ones that are provided to you, so that you may call th
     Gets the current value stored in the field's metadata.
 
 * `getPluginParameter(parameter)`  
-    Returns the value of a given parameter passed to the field plug-in.
+    Returns the value of a given `parameter` passed to the field plug-in.
 
 * `launchPreconfiguredIntent(callback(error, result))` (Android only)  
     Launches the external app configured via 'ex:' appearance and invokes the `callback` function either with an error or the results from the external app when it returns.  
@@ -172,10 +172,10 @@ Called JS functions are called by the form, and should be handled by your code.
     >     }
 
 * `handleRequiredMessage(message)`  
-    If defined, this will be called when a required field is left empty. The message parameter will contain the required message in the user-selected language.  
+    If defined, this will be called when a required field is left empty. The `message` parameter will contain the required message in the user-selected language.  
 
 * `handleConstraintMessage(message)`  
-    If defined, this will be called when a constraint fails for the field. The message parameter will contain the constraint message in the user-selected language.  
+    If defined, this will be called when a constraint fails for the field. The `message` parameter will contain the constraint message in the user-selected language.  
 
 * `setFocus()`  
     If defined, this will be called to focus on the field.
