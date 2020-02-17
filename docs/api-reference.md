@@ -153,6 +153,9 @@ Provided JS functions are ones that are provided to you, so that you may call th
     Launches the external app configured via 'ex:' appearance and invokes the `callback` function either with an error or the results from the external app when it returns.  
     *Note: the field's current value is passed to the external app as a `value` parameter.*
 
+* `launchIntent(intentName, parameters, callback(error, result))` (Android only)  
+    Launches  an external app given an `intentName` and a map of `parameters`. Invokes the `callback` function either with an error or the results from the external app when it returns. 
+
 ## Called JS functions
 
 Called JS functions are called by the form, and should be handled by your code.
