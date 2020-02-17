@@ -151,7 +151,7 @@ Provided JS functions are ones that are provided to you, so that you may call th
     Returns the value of a given parameter passed to the field plug-in.
 
 * `launchPreconfiguredIntent(callback(error, result))` (Android only)  
-    Launches the external app configured via 'ex:' appearance and invokes the `callback` function either with an error or the results from the external app when it returns. The field's current value is passed to the external app as a `value` parameter.
+    Launches the external app configured via 'ex:' appearance and invokes the `callback` function either with an error or the results from the external app when it returns. *Note: the field's current value is passed to the external app as a `value` parameter.*
 
 ## Called JS functions
 
