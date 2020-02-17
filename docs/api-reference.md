@@ -150,6 +150,9 @@ Provided JS functions are ones that are provided to you, so that you may call th
 * `getPluginParameter(parameter)`  
     Returns the value of a given parameter passed to the field plug-in.
 
+* `launchPreconfiguredIntent(callback(error, result))` (Android only)  
+    Launches the external app configured via 'ex:' appearance and invokes the callback function either with an error or the results from the external app when it returns.
+
 ## Called JS functions
 
 Called JS functions are called by the form, and should be handled by your code.
