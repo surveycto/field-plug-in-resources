@@ -89,7 +89,6 @@ When a field is rendered with a field plug-in, a set of field properties are mad
 
 * `PRECONFIGURED_INTENT`  
     A flag that shows whether the current field is configured to communicate with an external app via 'ex:' appearance.
-    
     *Note: this is feature available only in Android, so this flag will be always false in WebCollect and iOS Collect.*
 
  
