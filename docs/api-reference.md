@@ -143,6 +143,9 @@ Provided JS functions are ones that are provided to you, so that you may call th
 * `getFieldMetadata()`  
     Gets the current value stored in the field's metadata.
 
+* `getPluginParameter(parameter)`  
+    Returns the value of a given parameter passed to the field plug-in.
+
 ## Called JS functions
 
 Called JS functions are called by the form, and should be handled by your code.
