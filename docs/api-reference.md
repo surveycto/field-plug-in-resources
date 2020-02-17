@@ -124,20 +124,20 @@ When a field is rendered with a field plug-in, a set of field properties are mad
 
 Provided JS functions are ones that are provided to you, so that you may call them from your code.
 
-* `goToNextField()`  
+* `goToNextField([skipValidation])`  
     Moves to the next question. By default, this will attempt to validate the current field's response before moving to the next field.
   * `goToNextField(true)` will override the default behavior, and will skip the validation of the current field's response.
   * `goToNextField(false)` will function exactly the same as `goToNextField()`.
 
-* `goToPreviousField()`  
+* `goToPreviousField([skipValidation])`  
    Moves back to the previous question. By default, this will *not* attempt to validate the current field's response.  
-  * `goToPreviousField(true)` will override the default behavior, and attempt to validate the current response before moving to the previous field.
-  * `goToPreviousField(false)` will function exactly the same as `goToPreviousField()`.
+  * `goToPreviousField(true)` will function exactly the same as `goToPreviousField()`.
+  * `goToPreviousField(false)` will override the default behavior, and attempt to validate the current response before moving to the previous field.
 
 * `showSoftKeyboard()` (Android only)  
     Displays Android's soft keyboard.
 
-* `setFieldMetadata()`  
+* `setFieldMetadata(metadataString)`  
     Stores a string in the metadata for that field.  
 
 * `getFieldMetadata()`  
