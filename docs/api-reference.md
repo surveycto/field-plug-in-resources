@@ -87,7 +87,10 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     >     ],
     >     ...
 
-
+* `PRECONFIGURED_INTENT`  
+    A boolean representing whether or not a field is configured to communicate with an external app (via 'ex:' appearance).  
+    *Note: this is feature available only in Android, so this flag will be always false in WebCollect and iOS Collect.*
+ 
 *Note:* there may be additional properties attached to the field as well, which are specific to the field type. See the *Field-specific APIs* section below.
 
 ## CSS Classes
@@ -124,24 +127,34 @@ When a field is rendered with a field plug-in, a set of field properties are mad
 
 Provided JS functions are ones that are provided to you, so that you may call them from your code.
 
-* `goToNextField()`  
+* `goToNextField([skipValidation])`  
     Moves to the next question. By default, this will attempt to validate the current field's response before moving to the next field.
-  * `goToNextField(skipValidation)` will override the default behavior, and will skip the validation of the current field's response.
-  * `goToNextField(withValidation)` will function exactly the same as `goToNextField()`.
+  * `goToNextField(true)` will override the default behavior, and will skip the validation of the current field's response.
+  * `goToNextField(false)` will function exactly the same as `goToNextField()`.
 
-* `goToPreviousField()`  
+* `goToPreviousField([skipValidation])`  
    Moves back to the previous question. By default, this will *not* attempt to validate the current field's response.  
-  * `goToPreviousField(skipValidation)` will function exactly the same as `goToPreviousField()`.
-  * `goToPreviousField(withValidation)` will override the default behavior, and attempt to validate the current response before moving to the previous field.
+  * `goToPreviousField(true)` will function exactly the same as `goToPreviousField()`.
+  * `goToPreviousField(false)` will override the default behavior, and attempt to validate the current response before moving to the previous field.
 
 * `showSoftKeyboard()` (Android only)  
     Displays Android's soft keyboard.
 
-* `setFieldMetadata()`  
-    Stores a string in the metadata for that field.  
+* `setFieldMetadata(string)`  
+    Stores a `string` in the metadata for that field.  
 
 * `getFieldMetadata()`  
     Gets the current value stored in the field's metadata.
+
+* `getPluginParameter(parameter)`  
+    Returns the value of a given `parameter` passed to the field plug-in.
+
+* `launchPreconfiguredIntent(callback(error, result))` (Android only)  
+    Launches the external app configured via 'ex:' appearance and invokes the `callback` function either with an `error` or the `result` from the external app when it returns.  
+    *Note: the field's current value is passed to the external app as a `value` parameter.*
+
+* `launchIntent(intentName, parameters, callback(error, result))` (Android only)  
+    Launches  an external app given an `intentName` and a map of `parameters`. Invokes the `callback` function either with an `error` or the `result` from the external app when it returns. 
 
 ## Called JS functions
 
@@ -159,10 +172,10 @@ Called JS functions are called by the form, and should be handled by your code.
     >     }
 
 * `handleRequiredMessage(message)`  
-    If defined, this will be called when a required field is left empty. The message parameter will contain the required message in the user-selected language.  
+    If defined, this will be called when a required field is left empty. The `message` parameter will contain the required message in the user-selected language.  
 
 * `handleConstraintMessage(message)`  
-    If defined, this will be called when a constraint fails for the field. The message parameter will contain the constraint message in the user-selected language.  
+    If defined, this will be called when a constraint fails for the field. The `message` parameter will contain the constraint message in the user-selected language.  
 
 * `setFocus()`  
     If defined, this will be called to focus on the field.
