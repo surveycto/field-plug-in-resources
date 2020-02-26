@@ -23,9 +23,10 @@ In order to use a field plug-in, you need to do two things:
 These field plug-ins reproduce the default behavior of regular SurveyCTO field types. There should be virtually no differences in field appearance/behavior when these are used. They are meant to be used as starter templates for you to use when developing your own field plug-ins.
 
 * [Baseline text field](https://github.com/SurveyCTO-field-plug-ins/baseline-text)
+* [Baseline integer field](https://github.com/SurveyCTO-field-plug-ins/baseline-integer)
+* [Baseline decimal field](https://github.com/SurveyCTO-field-plug-ins/baseline-decimal)
 * [Baseline select_one field](https://github.com/SurveyCTO-field-plug-ins/baseline-select_one)
-
-*Note: we are actively working on developing baseline plug-ins for each supported field type. This list will soon grow to contain all of the following field types: text, decimal, integer, select_one, and select_multiple.*
+* [Baseline select_multiple field](https://github.com/SurveyCTO-field-plug-ins/baseline-select_multiple)
 
 ## Developer documentation
 
