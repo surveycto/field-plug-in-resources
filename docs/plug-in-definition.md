@@ -109,7 +109,7 @@ In addition to the files loaded automatically by `manifest.json`, you might want
 
 *Note: the pattern `{{PLUGINDIR}}` is replaced with the actual path before rendering the core HTML, CSS and JS for the plug-in using a simple search-and-replace logic.*
 
-*Note: subdirectories within field plug-ins are not supported. Please keep all files in the root of the .zip directory.*
+*Note: subdirectories within field plug-ins are ignored. Please keep all files in the root of the .zip directory. If your field plug-in contains separate subdirectories, they will all be combined into one root directory when uploaded, and duplicate filenames can cause errors at this point.*
 
 > **EXAMPLE (HTML)**
 >
@@ -133,7 +133,7 @@ For example: if you have a "image.png" attached directly to the form definition,
 
 > **EXAMPLE (HTML)**
 >
->     <img src="image.png"/> 
+>     <img src="image.png" /> 
 
 > **EXAMPLE (CSS)**
 >
