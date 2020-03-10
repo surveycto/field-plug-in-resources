@@ -37,6 +37,8 @@ We've developed a few field plug-ins to demonstrate some of their more advanced 
     Metadata can be used by your field plug-in to store data about itself while the form is being filled out.
 * [Intents](https://github.com/SurveyCTO-field-plug-ins/example-intents)  
     Intents can be used by Android Collect to communicate with other apps on the device.
+* [Launch SMS](https://github.com/SurveyCTO-field-plug-ins/example-launch-sms)  
+    This is a more use-case-specific version of the *intents* plugin (above).
 
 ## Developer documentation
 
