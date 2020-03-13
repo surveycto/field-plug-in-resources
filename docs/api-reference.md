@@ -44,7 +44,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     If there is a video file specified in the *media:video* column in the form definition, this will return the filename.
 
 * `METADATA`  
-    A place to store session metadata about the field. This value will be saved separately from the response data, and remain accessible to your field plug-in until the form is finalized. This value will not show up in exported form data, but it will be present in the raw XML of submitted data (and could be seen by those inspecting SurveyCTO Desktop local storage).  
+    A place to store session metadata about the field. This value will be saved separately from the response data, and remain accessible to your field plug-in until the form is finalized. This value will not show up in exported form data, but it will be present in the raw XML of submitted data (and could be seen by those inspecting SurveyCTO Desktop local storage). From a technical standpoint, the metadata is treated exactly like response data – it will be encrypted if the form and field are encrypted, and it will not be encerypted if the field is publishable.  
     *Note: field metadata will persist while navigating around different fields in the form, exiting and resuming the form, even resuming from a crashed form.*
 
 * `PARAMETERS`  
