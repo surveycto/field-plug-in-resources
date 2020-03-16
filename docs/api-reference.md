@@ -142,10 +142,10 @@ Provided JS functions are ones that are provided to you, so that you may call th
 * `showSoftKeyboard()` (Android only)  
     Displays Android's soft keyboard.
 
-* `setMetadata(string)`  
+* `setMetaData(string)`  
     Stores a `string` in the metadata for that field.  
 
-* `getMetadata()`  
+* `getMetaData()`  
     Gets the current value stored in the field's metadata.
 
 * `getPluginParameter(parameter)`  
