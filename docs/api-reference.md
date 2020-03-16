@@ -190,7 +190,7 @@ These properties and functions only apply to certain field types.
 
 ### Properties
 
-* `CURENT_ANSWER`  
+* `CURRENT_ANSWER`  
     Current text value.  
     `{{CURRENT_ANSWER}}` in HTML  
     `fieldProperties.CURRENT_ANSWER` in JS  
@@ -205,7 +205,7 @@ These properties and functions only apply to certain field types.
 
 ### Properties
 
-* `CURENT_ANSWER`  
+* `CURRENT_ANSWER`  
     Current integer value.  
     `{{CURRENT_ANSWER}}` in HTML  
     `fieldProperties.CURRENT_ANSWER` in JS  
