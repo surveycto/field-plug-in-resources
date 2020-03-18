@@ -220,7 +220,7 @@ These properties and functions only apply to certain field types.
 
 ### Properties
 
-* `CURENT_ANSWER`  
+* `CURRENT_ANSWER`  
     Current decimal value.  
     `{{CURRENT_ANSWER}}` in HTML  
     `fieldProperties.CURRENT_ANSWER` in JS  
