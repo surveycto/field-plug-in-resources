@@ -21,23 +21,23 @@ If you're interested in developing your own field plug-ins, we suggest taking th
 
 These field plug-ins reproduce the default behavior of regular SurveyCTO field types. There should be virtually no differences in field appearance/behavior when these are used. They are meant to be used as starter templates for you to use when developing your own field plug-ins.
 
-* [Baseline text field](https://github.com/SurveyCTO-field-plug-ins/baseline-text)
-* [Baseline integer field](https://github.com/SurveyCTO-field-plug-ins/baseline-integer)
-* [Baseline decimal field](https://github.com/SurveyCTO-field-plug-ins/baseline-decimal)
-* [Baseline select_one field](https://github.com/SurveyCTO-field-plug-ins/baseline-select_one)
-* [Baseline select_multiple field](https://github.com/SurveyCTO-field-plug-ins/baseline-select_multiple)
+* [Baseline text field](https://github.com/surveycto/baseline-text)
+* [Baseline integer field](https://github.com/surveycto/baseline-integer)
+* [Baseline decimal field](https://github.com/surveycto/baseline-decimal)
+* [Baseline select_one field](https://github.com/surveycto/baseline-select_one)
+* [Baseline select_multiple field](https://github.com/surveycto/baseline-select_multiple)
 
 ## Example templates
 
 We've developed a few field plug-ins to demonstrate some of their more advanced features. These are not inteded to be used for actual data collection, but are offered as tools to help you learn or test out these advanced features.
 
-* [Parameters](https://github.com/SurveyCTO-field-plug-ins/example-parameters)  
+* [Parameters](https://github.com/surveycto/example-parameters)  
     Parameters can be used to pass values into a field plug-in (including values from other form fields).
-* [Metadata](https://github.com/SurveyCTO-field-plug-ins/example-metadata)  
+* [Metadata](https://github.com/surveycto/example-metadata)  
     Metadata can be used by your field plug-in to store data about itself while the form is being filled out.
-* [Intents](https://github.com/SurveyCTO-field-plug-ins/example-intents)  
+* [Intents](https://github.com/surveycto/example-intents)  
     Intents can be used by Android Collect to communicate with other apps on the device.
-* [Launch SMS](https://github.com/SurveyCTO-field-plug-ins/launch-sms)  
+* [Launch SMS](https://github.com/surveycto/launch-sms)  
     This is a more use-case-specific version of the *intents* plugin (above).
 
 ## Developer documentation
@@ -47,4 +47,4 @@ We've developed a few field plug-ins to demonstrate some of their more advanced 
 
 ## Additional resources
 
-* [Full list of all field plug-ins developed by SurveyCTO](https://github.com/SurveyCTO-field-plug-ins)
+* [Full list of all field plug-ins developed by SurveyCTO](https://github.com/search?q=topic%3Ascto-field-plug-in+org%3Asurveycto&type=Repositories)
