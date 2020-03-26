@@ -1,5 +1,21 @@
 # Field plug-in definition
 
+## Table of contents
+
+1. [Overview](#overview)
+1. [Required files](#required-files)
+    1. [manifest.json](#manifest.json)
+    1. [template.html](#template.html)
+    1. [style.css](#style.css)
+    1. [script.js](#script.js)
+1. [Optional files](#optional-files)
+    1. [External CSS files](#external-css-files)
+    1. [External Javascript files](#external-javascript-files)
+    1. [Plug-in attachments](#plug-in-attachments)
+    1. [Form attachments](#form-attachments)
+
+
+## Overview
 Field plug-ins themselves are just zip files, with “.fieldplugin” added to the file extension (for example: “myfirstplugin.fieldplugin.zip”).
 
 We will be using the term “plug-in definition” interchangeably with “field plug-in” to refer to the x.fieldplugin.zip file and all of its contents. Similarly to how a form definition is a file (or set of files) which contains all the information needed to load and fill out a form, a plug-in definition is a .zip file which contains all the information needed to use the field plug-in.

@@ -1,50 +1,21 @@
-# Field plug-ins
+# Field plug-in resources
 
-## Overview
+SurveyCTO field plug-ins allow form designers more flexibility to extend and customize the appearance and functionality of their forms. You can use field plug-ins that other people develop and share, or you can develop your own.
 
-Field plug-ins override the default screen that is loaded when a field is shown in SurveyCTO Collect. When filling out a form, if you arrive at a field which is using a field plug-in, the plug-in’s code will be loaded and processed instead of the default SurveyCTO code.
+## Using field plug-ins
 
-## Getting started using field plug-ins
+To get started using field plug-ins in your SurveyCTO forms, we recommend first reading the [using field plug-ins](https://testdocs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html) page in the documentation. 
 
-If you already have a field plug-in that you'd like to use, please [click here to view the getting started guide](getting-started.md).
+## Developing your own field plug-ins
 
-## Getting started developing field plug-ins
+You can find all developer documentation here in this repo, in the `docs` folder. We recommend you [start here](/docs/developer-docs-home.md).
 
-If you're interested in developing your own field plug-ins, we suggest taking the following steps:
+## Where to find new field plug-ins
 
-1. Read the [field plug-in definition](docs/plug-in-definition.md) documentation.
-1. Familiarize yourself with the [API reference](docs/api-reference.md) documentation.
-1. Fork one of our baseline templates from below.
-1. If you don't yet have access to a SurveyCTO server, you'll need one! You can sign up for free [here](https://login.surveycto.com/signup/step1.html).
-
-## Baseline templates
-
-These field plug-ins reproduce the default behavior of regular SurveyCTO field types. There should be virtually no differences in field appearance/behavior when these are used. They are meant to be used as starter templates for you to use when developing your own field plug-ins.
-
-* [Baseline text field](https://github.com/surveycto/baseline-text)
-* [Baseline integer field](https://github.com/surveycto/baseline-integer)
-* [Baseline decimal field](https://github.com/surveycto/baseline-decimal)
-* [Baseline select_one field](https://github.com/surveycto/baseline-select_one)
-* [Baseline select_multiple field](https://github.com/surveycto/baseline-select_multiple)
-
-## Example templates
-
-We've developed a few field plug-ins to demonstrate some of their more advanced features. These are not inteded to be used for actual data collection, but are offered as tools to help you learn or test out these advanced features.
-
-* [Parameters](https://github.com/surveycto/example-parameters)  
-    Parameters can be used to pass values into a field plug-in (including values from other form fields).
-* [Metadata](https://github.com/surveycto/example-metadata)  
-    Metadata can be used by your field plug-in to store data about itself while the form is being filled out.
-* [Intents](https://github.com/surveycto/example-intents)  
-    Intents can be used by Android Collect to communicate with other apps on the device.
-* [Launch SMS](https://github.com/surveycto/launch-sms)  
-    This is a more use-case-specific version of the *intents* plugin (above).
-
-## Developer documentation
-
-* [Field plug-in definition](docs/plug-in-definition.md)
-* [API reference](docs/api-reference.md)
-
-## Additional resources
-
-* [Full list of all field plug-ins developed by SurveyCTO](https://github.com/search?q=topic%3Ascto-field-plug-in+org%3Asurveycto&type=Repositories)
+There are several ways to search for and find new field plug-ins. Below are a few places to start looking. 
+* **SurveyCTO Support Center**  
+    SurveyCTO maintains a curated catalog of field plug-ins that we consider exceptionally helpful or useful. To find a new plug-in for your form, your first stop should be the [Support Center Field Plug-in Catalog](https://support.surveycto.com).
+* **Developer documentation**  
+    If you're trying to develop your own field plug-ins, SurveyCTO has created several field plug-ins specifically to help you learn. You can find a list of these at the bottom of the [developer documentation home page](/docs/developer-docs-home.md).
+* **The GitHub Community**  
+    Anyone can build their own field plug-in and share it on GitHub. The easiest way to find other field plug-ins is to search GitHub for the `scto-field-plug-in` topic.
