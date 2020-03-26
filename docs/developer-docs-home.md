@@ -59,7 +59,7 @@ SurveyCTO develops and maintains a set of baseline field plug-ins which are desi
 
 SurveyCTO has developed a few field plug-ins to demonstrate some advanced features that plug-ins are capable of. These are not inteded to be used for actual data collection, but are offered as tools to help you learn or test out these advanced features while learning to develop your own plug-ins.
 
-* [example-parameters](https://github.com/surveycto/example-parameters)  
+* [feature-demo-parameters](https://github.com/surveycto/feature-demo-parameters)  
     Parameters can be used to pass values to a field plug-in (including values from other form fields).
 * [example-metadata](https://github.com/surveycto/example-metadata)  
     Metadata can be used by your field plug-in to store data about itself while the form is being filled out.
