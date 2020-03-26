@@ -61,7 +61,7 @@ SurveyCTO has developed a few field plug-ins to demonstrate some advanced featur
 
 * [feature-demo-parameters](https://github.com/surveycto/feature-demo-parameters)  
     Parameters can be used to pass values to a field plug-in (including values from other form fields).
-* [example-metadata](https://github.com/surveycto/example-metadata)  
+* [feature-demo-metadata](https://github.com/surveycto/feature-demo-metadata)  
     Metadata can be used by your field plug-in to store data about itself while the form is being filled out.
 * [feature-demo-intents](https://github.com/surveycto/feature-demo-intents)  
     Intents can be used by Android Collect to communicate with other apps on the device.
