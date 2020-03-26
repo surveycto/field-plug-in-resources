@@ -38,7 +38,7 @@ We recommend trying to match the structure of our baseline plug-in repositories 
 1. **Add the topic `scto-field-plug-in` to your repository.**  
     This will allow your field plug-in to show up when users search for that topic.
 1. **Keep all source files in a `source` folder.**  
-1. **Keep your .zip file up-to-date**  
+1. **Keep your .zip file up-to-date.**  
     Keep the most recent version of your *x.fieldpliugin.zip* file in the root of your repository. Most users will only be looking for that file, and they will not bother looking around in subdirectories, or zipping their own version. Every time you push changes to your source code, you should update that .zip file as well.
 1. **Keep all other files in an `extras` folder.**  
     This includes image previews, test forms, and other associated files that you may want to store in your repository. 
