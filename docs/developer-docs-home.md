@@ -55,7 +55,7 @@ SurveyCTO develops and maintains a set of baseline field plug-ins which are desi
 * [baseline-select_one](https://github.com/surveycto/baseline-select_one)
 * [baseline-select_multiple](https://github.com/surveycto/baseline-select_multiple)
 
-### Feature example field plug-ins
+### Feature demonstration field plug-ins
 
 SurveyCTO has developed a few field plug-ins to demonstrate some advanced features that plug-ins are capable of. These are not inteded to be used for actual data collection, but are offered as tools to help you learn or test out these advanced features while learning to develop your own plug-ins.
 
@@ -63,5 +63,5 @@ SurveyCTO has developed a few field plug-ins to demonstrate some advanced featur
     Parameters can be used to pass values to a field plug-in (including values from other form fields).
 * [example-metadata](https://github.com/surveycto/example-metadata)  
     Metadata can be used by your field plug-in to store data about itself while the form is being filled out.
-* [example-intents](https://github.com/surveycto/example-intents)  
+* [feature-demo-intents](https://github.com/surveycto/feature-demo-intents)  
     Intents can be used by Android Collect to communicate with other apps on the device.
