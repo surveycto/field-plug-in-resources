@@ -4,7 +4,7 @@ SurveyCTO field plug-ins allow form designers more flexibility to extend and cus
 
 ## Using field plug-ins
 
-To get started using field plug-ins in your SurveyCTO forms, we recommend first reading the [using field plug-ins](https://testdocs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html) page in the documentation. 
+To get started using field plug-ins in your SurveyCTO forms, we recommend first reading the [using field plug-ins](https://docs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html) page in the documentation. 
 
 ## Developing your own field plug-ins
 
