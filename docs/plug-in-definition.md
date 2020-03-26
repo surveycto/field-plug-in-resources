@@ -4,10 +4,10 @@
 
 1. [Overview](#overview)
 1. [Required files](#required-files)
-    1. [manifest.json](#manifest.json)
-    1. [template.html](#template.html)
-    1. [style.css](#style.css)
-    1. [script.js](#script.js)
+    1. [manifest.json](#manifestjson)
+    1. [template.html](#templatehtml)
+    1. [style.css](#stylecss)
+    1. [script.js](#scriptjs)
 1. [Optional files](#optional-files)
     1. [External CSS files](#external-css-files)
     1. [External Javascript files](#external-javascript-files)
@@ -45,7 +45,7 @@ We will be using the term “plug-in definition” interchangeably with “field
 > * Must start with a letter.
 > * Must not exceed 100 characters.
 
-## manifest.json
+## manifest.json 
 
 This file contains all the meta-information about the plug-in. Here is a list of the attributes contained in the manifest.json file:
 
