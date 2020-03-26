@@ -6,7 +6,7 @@
     1. [Field properties](#field-properties)
     1. [CSS classes](#css-classes)
     1. [Provided global JS functions](#provided-global-js-functions)
-    1. [Called Global JS functions](#called-global-js-functions)
+    1. [Called global JS functions](#called-global-js-functions)
 1. [Field-specific APIs](#field-specific-apis)
     1. [Text field APIs](#text-field-apis)
     1. [Integer field APIs](#integer-field-apis)
@@ -138,7 +138,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
 * `language-[user-selected-language]`  
     Appended to the document level. Special characters and spaces in the language name are either converted to simple characters — when possible — or replaced with hyphens. For example: if the selected language is `idioma español`, the class name will be `language-idioma-espanol`.  For forms with a single language, the class name will be `language-default`.
 
-## Provided Global JS functions
+## Provided global JS functions
 
 Provided JS functions are ones that are provided to you, so that you may call them from your code.
 
@@ -173,7 +173,7 @@ Provided JS functions are ones that are provided to you, so that you may call th
 * `launchIntent(intentName, parameters, callback(error, result))` (Android only)  
     Launches  an external app given an `intentName` and a map of `parameters`. Invokes the `callback` function either with an `error` or the `result` from the external app when it returns. 
 
-## Called Global JS functions
+## Called global JS functions
 
 Called JS functions are called by the form, and should be handled by your code.
 
