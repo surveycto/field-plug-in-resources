@@ -14,7 +14,7 @@ You can find all developer documentation here in this repo, in the `docs` folder
 
 There are several ways to search for and find new field plug-ins. Below are a few places to start looking. 
 * **SurveyCTO Support Center**  
-    SurveyCTO maintains a curated catalog of field plug-ins that we consider exceptionally helpful or useful. To find a new plug-in for your form, your first stop should be the [Support Center Field Plug-in Catalog](https://support.surveycto.com).
+    SurveyCTO maintains a curated catalog of field plug-ins that we consider exceptionally helpful or useful. To find a new plug-in for your form, your first stop should be the [Support Center Field Plug-in Catalog](https://support.surveycto.com/hc/en-us/articles/360045235134-Field-plug-in-catalog).
 * **Developer documentation**  
     If you're trying to develop your own field plug-ins, SurveyCTO has created several field plug-ins specifically to help you learn. You can find a list of these at the bottom of the [developer documentation home page](/docs/developer-docs-home.md).
 * **The GitHub Community**  
