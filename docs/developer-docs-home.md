@@ -18,7 +18,7 @@ If you've ever created your own web page using HTML, CSS, and Javascript, then y
 
 ## What can a field plug-in do
 
-The short answer is that a field plug-in can do anything that a normal web page can do. When filling out a SurveyCTO form and you arrive at a field that uses a field plug-in, a web page is created using your field plug-in's code. On Android, a field plug-in is loaded in its own fully-functional Android webview. On iOS, it is loaded in a WKWebView. In web forms, it is loaded in an iframe. No matter which platform is used, a field plug-in is free to use HTML, CSS, and Javascript in the same way any normal web page can.
+The short answer is that a field plug-in can do anything that a normal web page can do. When filling out a SurveyCTO form and you arrive at a field that uses a field plug-in, a web page is created using your field plug-in's code. On Android, a field plug-in is loaded in its own fully-functional Android WebView. On iOS, it is loaded in a WKWebView. In web forms, it is loaded in an iframe. No matter which platform is used, a field plug-in is free to use HTML, CSS, and Javascript in the same way any normal web page can.
 
 ## How can a field plug-in interact with a form
 
