@@ -4,7 +4,7 @@
 
 1. [What is a field plug-in](#what-is-a-field-plug-in)
 1. [What can a field plug-in do](#what-can-a-field-plug-in-do)
-1. [How does a field plug-in interact with a form](#how-does-a-field-plug-in-interact-with-a-form)
+1. [How can a field plug-in interact with a form](#how-can-a-field-plug-in-interact-with-a-form)
 1. [How to start](#how-to-start)
 1. [Documentation index](#documentation-index)
 1. [Sharing your field plug-ins](#sharing-your-field-plug-ins)
