@@ -13,6 +13,8 @@
     1. [Decimal field APIs](#decimal-field-apis)
     1. [Select_one and select_multiple field APIs](#select_one-and-select_multiple-field-apis)
 
+Please note: the following is a list of APIs that we've developed to allow your field plug-in to interact with SurveyCTO. This list is in addition to all the existing functionality available by using normal HTML, CSS, and Javascript.
+
 # Global APIs
 
 ## Field properties
