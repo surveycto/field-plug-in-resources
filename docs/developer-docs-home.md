@@ -37,8 +37,8 @@ Field plug-ins are loaded in their own isolated web views, but there are several
 
 The easiest way to get started developing your own field plug-ins is to start with one of our pre-made templates. We've created a set of 'baseline' field plug-ins which contain all the code necessary to reproduce the standard field types. Starting with a baseline plug-in allows you to start with a fully-functional field, and make modifications as you need. We recommend following the steps below to start.
 
-1. Read the [field plug-in definition](docs/plug-in-definition.md) documentation.
-1. Familiarize yourself with the [form API reference](docs/api-reference.md) documentation, so you know what options are available to you for interacting with the rest of the form.
+1. Read the [field plug-in definition](plug-in-definition.md) documentation.
+1. Familiarize yourself with the [form API reference](api-reference.md) documentation, so you know what options are available to you for interacting with the rest of the form.
 1. Fork one of our baseline field plug-in repos from [the list below](#Baseline-field-plug-ins).
 1. Each baseline repo contains a test form. Upload that test form (and it's associated attachments) to your SurveyCTO server. 
 
