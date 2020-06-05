@@ -30,6 +30,9 @@ Field plug-ins are loaded in their own isolated web views, but there are several
 * **Parameters**  
     When you configure a field to use a field plug-in, you can supply optional parameters as well. These parameters can contain expressions and field references, which get evaluated right before the field plug-in loads. This can be used to pass information or configuration settings from other parts of the form to your field plug-in. More information is available within the [form API reference](https://github.com/surveycto/field-plug-in-resources/blob/master/docs/api-reference.md) documentation.
 
+* **Metadata**  
+    Your field plug-in can store metadata alongside response data. This metadata can be accessed by other fields in the form using the `plug-in-metadata(field)` function. This can be used to pass information from your field plug-in to other parts of the form. See [this page](https://docs.surveycto.com/02-designing-forms/01-core-concepts/09.expressions.html) for more info about form functions including `plug-in-metadata(field)`.
+
 * **Referencing form attachments**  
     Field plug-ins can access form attachments if you know their file name. See the [field plug-in definition](https://github.com/surveycto/field-plug-in-resources/blob/master/docs/plug-in-definition.md) documentation for more info.
 
