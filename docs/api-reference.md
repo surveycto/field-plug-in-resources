@@ -175,6 +175,9 @@ Provided JS functions are ones that are provided to you, so that you may call th
 * `launchIntent(intentName, parameters, callback(error, result))` (Android only)  
     Launches  an external app given an `intentName` and a map of `parameters`. Invokes the `callback` function either with an `error` or the `result` from the external app when it returns. 
 
+* `getPhoneCallStatus(callback(error, result))` (Android only)
+    Returns the status of an going call (if any) as defined in https://developer.android.com/reference/android/telecom/Call#getState(). if no call is in progress then it returns -1.
+
 ## Called global JS functions
 
 Called JS functions are called by the form, and should be handled by your code.
