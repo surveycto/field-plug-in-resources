@@ -175,6 +175,9 @@ Provided JS functions are ones that are provided to you, so that you may call th
 * `launchIntent(intentName, parameters, callback(error, result))` (Android only)  
     Launches  an external app given an `intentName` and a map of `parameters`. Invokes the `callback` function either with an `error` or the `result` from the external app when it returns. 
 
+* `makePhoneCall(phone_number, phone_number_label, hide_phone_number, callback(error, result))` (Android only)
+    Places a phone call to the given `phone_number`. The optional `phone_number_label` parameter can be used to mask the phone number in the UI when the use case requires that the phone number should be kept private. If this label is blank but `hide_phone_number` is 1 then the phone number will be masked with this label: `(Number hidden)`
+
 * `getPhoneCallStatus(callback(error, result))` (Android only)
     Returns the status of an going call (if any) as defined in https://developer.android.com/reference/android/telecom/Call#getState(). if no call is in progress then it returns -1.
 
