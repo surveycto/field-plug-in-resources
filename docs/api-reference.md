@@ -68,7 +68,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
     Form designers may pass custom parameters to your field plug-in. Each parameter will be a key/value pair defined in the *appearance* column of the form definition. Parameter values will be evaluated by the form before the field is rendered (before your field plug-in code is loaded), so you can use `${field}` references and expressions.  
     > **EXAMPLE (STATIC VALUES)**  
     > Field appearance:
-    > 
+    >
     >      custom-my-plugin(A=123.45, B='some static string')
     > `fieldProperties` object:  
     >
@@ -87,7 +87,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
 
     > **EXAMPLE (DYNAMIC VALUES)**  
     > Field appearance:
-    > 
+    >
     >      custom-my-plugin(A=${firstname}, B=concat(${firstname}, ' ', ${lastname}))
     > `fieldProperties` object:  
     >
@@ -107,7 +107,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
 * `PRECONFIGURED_INTENT`  
     A boolean representing whether or not a field is configured to communicate with an external app (via 'ex:' appearance).  
     *Note: this is feature available only in Android, so this flag will be always false in WebCollect and iOS Collect.*
- 
+
 *Note:* there may be additional properties attached to the field as well, which are specific to the field type. See the *Field-specific APIs* section below.
 
 ## CSS Classes
@@ -127,7 +127,7 @@ When a field is rendered with a field plug-in, a set of field properties are mad
 * `default-question-text-size`  
     Use this class in your HTML templates to apply the default font size for question text. In Android and iOS, this will match "General settings -> Font size". In WebCollect, this will match the size used by native widgets.  
     > EXAMPLE
-    > 
+    >
     >      <p class=”default-question-text-size”>Here is my question.</p>
     > This will make your question text size dynamic, so that it can be controlled by the Collect device settings.
 
@@ -173,7 +173,16 @@ Provided JS functions are ones that are provided to you, so that you may call th
     *Note: the field's current value is passed to the external app as a `value` parameter.*
 
 * `launchIntent(intentName, parameters, callback(error, result))` (Android only)  
-    Launches  an external app given an `intentName` and a map of `parameters`. Invokes the `callback` function either with an `error` or the `result` from the external app when it returns. 
+    Launches  an external app given an `intentName` and a map of `parameters`. Invokes the `callback` function either with an `error` or the `result` from the external app when it returns.
+
+* `makePhoneCall(phone_number, phone_number_label, hide_phone_number, callback(error, result))` (Android only)  
+    Places a phone call to the given `phone_number`. If _Collect_ is currently set as the default phone app, the call will be placed and managed by _Collect_. If _Collect_ is not currently the default phone app, and `hide_phone_number` is not set to `1`, then _Collect_ will call out with an intent so that the user can make the call with another phone app. For an example of how this works, take a look at the [phone-call](https://github.com/surveycto/phone-call) field plug-in.
+  * `phone_number` The phone number to call.
+  * `hide_phone_number` (optional) Set this to `1` to hide the phone number from the user. The phone number will be removed from everywhere in the UI (including device phone call logs).
+  * `phone_number_label` (optional) Supply an alternate label to use for the phone number when `hide_phone_number=1`.  
+
+* `getPhoneCallStatus(callback(error, result))` (Android only)  
+    If the phone is not in use, i.e. if there is no active call, this will return `-1`. If the phone is in use, this will return the integer state value from the [Android getState() method](https://developer.android.com/reference/android/telecom/Call#getState()). For an example of how this works, take a look at the [phone-call](https://github.com/surveycto/phone-call) field plug-in.
 
 ## Called global JS functions
 
@@ -182,7 +191,7 @@ Called JS functions are called by the form, and should be handled by your code.
 * `clearAnswer()` (required)  
     This function should be defined in the plug-in’s JS code and it will be called when the field's answer is cleared.  
     > EXAMPLE  
-    > 
+    >
     >     var input = document.getElementById('txt');
     >     // When the user attempts to clear the answer, clear the value of the input element
     >
