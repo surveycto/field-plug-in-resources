@@ -178,7 +178,7 @@ Provided JS functions are ones that are provided to you, so that you may call th
 * `makePhoneCall(phone_number, phone_number_label, hide_phone_number, callback(error, result))` (Android only)  
     Places a phone call to the given `phone_number`. If _Collect_ is currently set as the default phone app, the call will be placed and managed by _Collect_. If _Collect_ is not currently the default phone app, and `hide_phone_number` is not set to `1`, then _Collect_ will call out with an intent so that the user can make the call with another phone app. For an example of how this works, take a look at the [phone-call](https://github.com/surveycto/phone-call) field plug-in.
   * `phone_number` The phone number to call.
-  * `hide_phone_number` (optional) Set this to `1` to hide the phone number from the user. The phone number will be removed from everywhere in the UI (including device phone call logs).
+  * `hide_phone_number` (optional) Set this to `1` to hide the phone number from the user. The phone number will not be shown anywhere in _Collect_. Please note that other phone apps on the device will still be able to access and display the phone number in _their_ call logs. If you want to make sure the phone number is not accessible in any way to the enumerator, you should disable all other phone apps on the device, and make sure the enumerator is using a SIM card that you control. If using their own SIM card, the enumerator will be able to contact their network provider to obtain call records containing all the phone numbers.
   * `phone_number_label` (optional) Supply an alternate label to use for the phone number when `hide_phone_number=1`.  
 
 * `getPhoneCallStatus(callback(error, result))` (Android only)  
