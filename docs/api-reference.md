@@ -2,16 +2,26 @@
 
 ## Table of contents
 
-1. [Global APIs](#global-apis)
-    1. [Field properties](#field-properties)
-    1. [CSS classes](#css-classes)
-    1. [Provided global JS functions](#provided-global-js-functions)
-    1. [Called global JS functions](#called-global-js-functions)
-1. [Field-specific APIs](#field-specific-apis)
-    1. [Text field APIs](#text-field-apis)
-    1. [Integer field APIs](#integer-field-apis)
-    1. [Decimal field APIs](#decimal-field-apis)
-    1. [Select_one and select_multiple field APIs](#select_one-and-select_multiple-field-apis)
+- [API Reference](#api-reference)
+  - [Table of contents](#table-of-contents)
+- [Global APIs](#global-apis)
+  - [Field properties](#field-properties)
+  - [CSS Classes](#css-classes)
+  - [Provided global JS functions](#provided-global-js-functions)
+  - [Called global JS functions](#called-global-js-functions)
+- [Field-specific APIs](#field-specific-apis)
+  - [Text field APIs](#text-field-apis)
+    - [Properties](#properties)
+    - [Provided JS functions](#provided-js-functions)
+  - [Integer field APIs](#integer-field-apis)
+    - [Properties](#properties-1)
+    - [Provided JS functions](#provided-js-functions-1)
+  - [Decimal field APIs](#decimal-field-apis)
+    - [Properties](#properties-2)
+    - [Provided JS functions](#provided-js-functions-2)
+  - [Select_one and select_multiple field APIs](#select_one-and-select_multiple-field-apis)
+    - [Properties](#properties-3)
+    - [Provided JS functions](#provided-js-functions-3)
 
 Please note: the following is a list of APIs that we've developed to allow your field plug-in to interact with SurveyCTO. This list is in addition to all the existing functionality available by using normal HTML, CSS, and Javascript.
 
@@ -47,6 +57,9 @@ When a field is rendered with a field plug-in, a set of field properties are mad
 
 * `REQUIREDMESSAGE`  
     The message which will be shown if a field is marked *required* and the user attempts to skip it without giving an answer. This will contain the default SurveyCTO required message if there is no *required message* specified in the form definition.
+
+* `QUESTION_PLACEHOLDER_LABEL`  
+    This is the default placeholder text for supported field types, in the currently-selected language. For *text*, *integer*, and *decimal* fields, the English placeholder is "Your answer here...". For *select_one* fields using the *minimal* appearance, the placeholder is "Select one answer". 
 
 * `READONLY`  
     A boolean representing whether or not a field is read only.
