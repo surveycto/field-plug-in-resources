@@ -2,26 +2,16 @@
 
 ## Table of contents
 
-1. [API Reference](#api-reference)
-   1. [Table of contents](#table-of-contents)
-2. [Global APIs](#global-apis)
-   1. [Field properties](#field-properties)
-   2. [CSS Classes](#css-classes)
-   3. [Provided global JS functions](#provided-global-js-functions)
-   4. [Called global JS functions](#called-global-js-functions)
-3. [Field-specific APIs](#field-specific-apis)
-   1. [Text field APIs](#text-field-apis)
-      1. [Properties](#properties)
-      2. [Provided JS functions](#provided-js-functions)
-   2. [Integer field APIs](#integer-field-apis)
-      1. [Properties](#properties-1)
-      2. [Provided JS functions](#provided-js-functions-1)
-   3. [Decimal field APIs](#decimal-field-apis)
-      1. [Properties](#properties-2)
-      2. [Provided JS functions](#provided-js-functions-2)
-   4. [Select_one and select_multiple field APIs](#select_one-and-select_multiple-field-apis)
-      1. [Properties](#properties-3)
-      2. [Provided JS functions](#provided-js-functions-3)
+1. [Global APIs](#global-apis)
+    1. [Field properties](#field-properties)
+    1. [CSS classes](#css-classes)
+    1. [Provided global JS functions](#provided-global-js-functions)
+    1. [Called global JS functions](#called-global-js-functions)
+1. [Field-specific APIs](#field-specific-apis)
+    1. [Text field APIs](#text-field-apis)
+    1. [Integer field APIs](#integer-field-apis)
+    1. [Decimal field APIs](#decimal-field-apis)
+    1. [Select_one and select_multiple field APIs](#select_one-and-select_multiple-field-apis)
 
 Please note: the following is a list of APIs that we've developed to allow your field plug-in to interact with SurveyCTO. This list is in addition to all the existing functionality available by using normal HTML, CSS, and Javascript.
 
