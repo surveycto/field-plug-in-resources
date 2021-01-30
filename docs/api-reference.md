@@ -48,6 +48,9 @@ When a field is rendered with a field plug-in, a set of field properties are mad
 * `REQUIREDMESSAGE`  
     The message which will be shown if a field is marked *required* and the user attempts to skip it without giving an answer. This will contain the default SurveyCTO required message if there is no *required message* specified in the form definition.
 
+* `QUESTION_PLACEHOLDER_LABEL`  
+    This is the default placeholder text for supported field types, in the currently-selected language. For *text*, *integer*, and *decimal* fields, the English placeholder is "Your answer here...". For *select_one* fields using the *minimal* appearance, the placeholder is "Select one answer". 
+
 * `READONLY`  
     A boolean representing whether or not a field is read only.
 
