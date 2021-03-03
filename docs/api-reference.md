@@ -176,7 +176,7 @@ Provided JS functions are ones that are provided to you, so that you may call th
     *Note: the field's current value is passed to the external app as a `value` parameter.*
 
 * `launchIntent(intentName, parameters, callback(error, result))` (Android only)  
-    Launches  an external app given an `intentName` and a map of `parameters`. Invokes the `callback` function either with an `error` or the `result` from the external app when it returns.
+    Launches  an external app using the [Android intent class](https://developer.android.com/reference/android/content/Intent), given an `intentName` and a map of `parameters`. When this function is called, Collect will check the `parameters` map for a parameter named `uri_data`. The value of `uri_data` will be passed as the intent's `data` attribute. All other parameters (if any) will be passed as intent `extras`. Invokes the `callback` function either with an `error` or the `result` from the external app when it returns.
 
 * `makePhoneCall(phone_number, phone_number_label, hide_phone_number, callback(error, result))` (Android only)  
     Places a phone call to the given `phone_number`. If _Collect_ is currently set as the default phone app, the call will be placed and managed by _Collect_. If _Collect_ is not currently the default phone app, and `hide_phone_number` is not set to `1`, then _Collect_ will call out with an intent so that the user can make the call with another phone app. For an example of how this works, take a look at the [phone-call](https://github.com/surveycto/phone-call) field plug-in.
