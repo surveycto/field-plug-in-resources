@@ -215,6 +215,8 @@ Called JS functions are called by the form, and should be handled by your code.
 
 These properties and functions only apply to certain field types.
 
+**Note:** Field plug-ins can only store and retrieve data that is compatible with their underlying field type. The supported field types are **text**, **integer**, **decimal**, **select_one**, and **select_multiple**. This means that a field plug-in's response data is limited to text strings, integers, decimals, and choice list values. It is not possible for a field plug-in to receive or store other types of input (such as images, audio, or binary data) through the field-specific APIs.
+
 ## Text field APIs
 
 ### Properties
