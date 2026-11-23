@@ -238,6 +238,7 @@ Field plug-ins can use the device camera through the standard `navigator.mediaDe
 * In Android Collect, the camera permission is requested at first start, together with the other permissions Collect asks for up front.
 * In iOS Collect, the system prompt asking for camera access appears the first time a field plug-in uses the camera.
 * In WebCollect, the browser asks for permission as usual.
+* Call `getUserMedia` from the field plug-in itself, and ask for video only: audio is not available, so a request that includes audio fails. Embedded pages from other sites (for example an `<iframe>` with a remote address) cannot use the camera.
 
 > EXAMPLE
 >
