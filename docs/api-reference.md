@@ -173,8 +173,10 @@ Provided JS functions are ones that are provided to you, so that you may call th
 
 * `setGestureControl(enabled)`  
     Lets your plug-in own the touch gestures that start inside it, for example a map that the user pans, zooms or long-presses. After `setGestureControl(true)`, a drag that starts inside the plug-in no longer scrolls the form, a horizontal swipe no longer moves to another screen, and a long press no longer opens the field's menu: all of them reach your plug-in's touch events instead. `setGestureControl(false)` gives them back to the form, for example behind a "lock map" toggle. Plug-ins that never call it behave as before.
+  * `enabled` is a boolean: only `true` turns gesture control on, and any other value turns it off, including the string `"true"` and `1`. Plug-in parameters are strings, so convert them, for example `setGestureControl(getPluginParameter('pan') === '1')`.
+  * Call it before the user touches the plug-in, for example when the plug-in loads. A change while a finger is down is only certain to apply from the next touch.
   * The whole plug-in is the gesture area, so the user scrolls the form by dragging outside it. Keep a map shorter than the screen, so there is always room above or below it to scroll.
-  * The function exists in Collect for Android, Collect for iOS and web forms, so you can call it without checking for it. On iOS, the plug-in already gets those gestures; in web forms, it turns off the swipe navigation inside the plug-in.
+  * It is available from Collect for Android 2.86.0, Collect for iOS 2.86.0 and web forms on server version 2.86.0. Older versions do not have it, and calling it there stops your script with an error, so check for it first: `if (typeof setGestureControl === 'function') { setGestureControl(true) }`. On iOS, the plug-in already gets those gestures; in web forms, it turns off the swipe navigation inside the plug-in.
 
 * `launchPreconfiguredIntent(callback(error, result))` (Android only)  
     Launches the external app configured via 'ex:' appearance and invokes the `callback` function either with an `error` or the `result` from the external app when it returns.  
@@ -196,7 +198,8 @@ Provided JS functions are ones that are provided to you, so that you may call th
 
 Your plug-in can get the device location with the standard [`navigator.geolocation`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation) API (`getCurrentPosition`, `watchPosition` and `clearWatch`), which map libraries use too, for example Leaflet's `locate()`.
 
-* In Collect for Android and Collect for iOS, the plug-in gets the location only when Collect already has the location permission. Collect never asks for the permission on the plug-in's behalf: without it, your error callback gets a `PERMISSION_DENIED` error (code `1`). A form that needs the location can include a native `geopoint` field earlier on, which asks for the permission when needed.
+* In Collect for Android and Collect for iOS (from version 2.86.0), the plug-in gets the location only when Collect already has the location permission. Collect never asks for the permission on the plug-in's behalf: without it, your error callback gets a `PERMISSION_DENIED` error (code `1`). A form that needs the location can include a native `geopoint` field earlier on, which asks for the permission when needed.
+* Collect gives the location only to your plug-in's own page, not to content it embeds from other sites, such as an `https://` iframe.
 * In web forms, the browser asks the user, as it does for any web page.
 
 ## Called global JS functions
