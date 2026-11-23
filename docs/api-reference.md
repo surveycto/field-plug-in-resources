@@ -193,6 +193,7 @@ Provided JS functions are ones that are provided to you, so that you may call th
   * `fileName` The name of the file, as the other field's answer holds it. Pass it to your field plug-in as a parameter, for example `custom-blurcheck(photo=${img})`, and read it with `getPluginParameter('photo')`.
   * The `callback` receives an `error` if `fileName` is blank, if it contains a path separator (`/` or `\`) or `..`, or if there is no such file in the current submission.
   * The `url` can be used in an `<img>` element, with `fetch`, and to draw on a `<canvas>`. It is valid only while the field is on screen, so request a new one each time the field is shown instead of storing it.
+  * In WebCollect, the name is only checked for the cases above; it is not checked against the submission's files. For a file that does not exist, the `url` shows a "missing media" image instead of the `callback` receiving an `error`. Android Collect and iOS Collect call back with an `error` in that case. An *image* field with no answer yet passes an empty name, which is an `error` on every platform.
   * This is read-only: a field plug-in still cannot save a photo as its own answer.
   > EXAMPLE
   >
