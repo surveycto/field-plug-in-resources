@@ -7,6 +7,7 @@
     1. [CSS classes](#css-classes)
     1. [Provided global JS functions](#provided-global-js-functions)
     1. [Called global JS functions](#called-global-js-functions)
+    1. [Device location](#device-location)
     1. [Camera](#camera)
 1. [Field-specific APIs](#field-specific-apis)
     1. [Text field APIs](#text-field-apis)
@@ -172,6 +173,13 @@ Provided JS functions are ones that are provided to you, so that you may call th
 * `getPluginParameter(parameter)`  
     Returns the value of a given `parameter` passed to the field plug-in.
 
+* `setGestureControl(enabled)`  
+    Lets your plug-in own the touch gestures that start inside it, for example a map that the user pans, zooms or long-presses. After `setGestureControl(true)`, a drag that starts inside the plug-in no longer scrolls the form, a horizontal swipe no longer moves to another screen, and a long press no longer opens the field's menu: all of them reach your plug-in's touch events instead. `setGestureControl(false)` gives them back to the form, for example behind a "lock map" toggle. Plug-ins that never call it behave as before.
+  * `enabled` is a boolean: only `true` turns gesture control on, and any other value turns it off, including the string `"true"` and `1`. Plug-in parameters are strings, so convert them, for example `setGestureControl(getPluginParameter('pan') === '1')`.
+  * Call it before the user touches the plug-in, for example when the plug-in loads. A change while a finger is down is only certain to apply from the next touch.
+  * The whole plug-in is the gesture area, so the user scrolls the form by dragging outside it. Keep a map shorter than the screen, so there is always room above or below it to scroll.
+  * Available in Android Collect, iOS Collect, and WebCollect (minimum version: 2.86.0 of each). Older versions do not have it, and calling it there stops your script with an error, so check for it first: `if (typeof setGestureControl === 'function') { setGestureControl(true) }`. On iOS, the plug-in already gets those gestures; in WebCollect, it turns off the swipe navigation inside the plug-in.
+
 * `launchPreconfiguredIntent(callback(error, result))` (Android only)  
     Launches the external app configured via 'ex:' appearance and invokes the `callback` function either with an `error` or the `result` from the external app when it returns.  
     *Note: the field's current value is passed to the external app as a `value` parameter.*
@@ -230,6 +238,14 @@ Called JS functions are called by the form, and should be handled by your code.
 * `setFocus()`  
     If defined, this will be called to focus on the field.
 
+## Device location
+
+Your plug-in can get the device location with the standard [`navigator.geolocation`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation) API (`getCurrentPosition`, `watchPosition` and `clearWatch`), which map libraries use too, for example Leaflet's `locate()`.
+
+* In Android Collect and iOS Collect (minimum version: 2.86.0 of each), the plug-in gets the location only when Collect already has the location permission. Collect never asks for the permission on the plug-in's behalf: without it, your error callback gets a `PERMISSION_DENIED` error (code `1`). A form that needs the location can include a native `geopoint` field earlier on, which asks for the permission when needed.
+* Collect gives the location only to your plug-in's own page, not to content it embeds from other sites, such as an `https://` iframe.
+* In WebCollect, the browser asks the user, as it does for any web page.
+
 ## Camera
 
 Field plug-ins can use the device camera through the standard `navigator.mediaDevices.getUserMedia()` browser API. It works in WebCollect, iOS Collect, and Android Collect (in Android, from version 2.86.0).
@@ -255,6 +271,8 @@ Field plug-ins can use the device camera through the standard `navigator.mediaDe
 # Field-specific APIs
 
 These properties and functions only apply to certain field types.
+
+**Note:** Field plug-ins can only store and retrieve data that is compatible with their underlying field type. The supported field types are **text**, **integer**, **decimal**, **select_one**, and **select_multiple**. This means that a field plug-in's response data is limited to text strings, integers, decimals, and choice list values. A field plug-in's answer cannot hold other types of data, such as images, audio or other files. To read a file that another field saved, see `getSubmissionFileUrl()`.
 
 ## Text field APIs
 
