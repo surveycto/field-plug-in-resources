@@ -7,6 +7,7 @@
     1. [CSS classes](#css-classes)
     1. [Provided global JS functions](#provided-global-js-functions)
     1. [Called global JS functions](#called-global-js-functions)
+    1. [Camera](#camera)
 1. [Field-specific APIs](#field-specific-apis)
     1. [Text field APIs](#text-field-apis)
     1. [Integer field APIs](#integer-field-apis)
@@ -194,6 +195,24 @@ Provided JS functions are ones that are provided to you, so that you may call th
 * `getPhoneCallStatus(callback(error, result))` (Android only)  
     If the phone is not in use, i.e. if there is no active call, this will return `-1`. If the phone is in use, this will return the integer state value from the [Android getState() method](https://developer.android.com/reference/android/telecom/Call#getState()). For an example of how this works, take a look at the [phone-call](https://github.com/surveycto/phone-call) field plug-in.
 
+* `getSubmissionFileUrl(fileName, callback(error, url))`  
+    Reads a file that another field in the current submission has saved, for example the photo taken by an *image* field. Invokes the `callback` function either with an `error` or with a `url` for the file. Available in Android Collect, iOS Collect, and WebCollect (minimum version: 2.86.0 of each).
+  * `fileName` The name of the file, as the other field's answer holds it. Pass it to your field plug-in as a parameter, for example `custom-blurcheck(photo=${img})`, and read it with `getPluginParameter('photo')`.
+  * The `callback` receives an `error` if `fileName` is blank, if it contains a path separator (`/` or `\`), if it is `.` or `..`, or if there is no such file in the current submission.
+  * The `url` can be used in an `<img>` element, with `fetch`, and to draw on a `<canvas>`. It is valid only while the field is on screen, so request a new one each time the field is shown instead of storing it.
+  * In WebCollect, the name is only checked for the cases above; it is not checked against the submission's files. For a file that does not exist, the `url` shows a "missing media" image instead of the `callback` receiving an `error`. Android Collect and iOS Collect call back with an `error` in that case. An *image* field with no answer yet passes an empty name, which is an `error` on every platform.
+  * This is read-only: a field plug-in still cannot save a photo as its own answer.
+  > EXAMPLE
+  >
+  >     var fileName = getPluginParameter('photo');
+  >     getSubmissionFileUrl(fileName, function (error, url) {
+  >       if (error) {
+  >         console.log(error);
+  >         return;
+  >       }
+  >       document.getElementById('preview').src = url;
+  >     });
+
 ### Device location
 
 Your plug-in can get the device location with the standard [`navigator.geolocation`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation) API (`getCurrentPosition`, `watchPosition` and `clearWatch`), which map libraries use too, for example Leaflet's `locate()`.
@@ -225,6 +244,28 @@ Called JS functions are called by the form, and should be handled by your code.
 
 * `setFocus()`  
     If defined, this will be called to focus on the field.
+
+## Camera
+
+Field plug-ins can use the device camera through the standard `navigator.mediaDevices.getUserMedia()` browser API. It works in WebCollect, iOS Collect, and Android Collect (in Android, from version 2.86.0).
+
+* Choose the front or rear camera with the `facingMode` constraint: `{ video: { facingMode: 'user' } }` for the front camera, or `{ video: { facingMode: 'environment' } }` for the rear camera.
+* In Android Collect, the camera permission is requested at first start, together with the other permissions Collect asks for up front.
+* In iOS Collect, the system prompt asking for camera access appears the first time a field plug-in uses the camera.
+* In WebCollect, the browser asks for permission as usual.
+* Call `getUserMedia` from the field plug-in itself, and ask for video only: audio is not available, so a request that includes audio fails. Embedded pages from other sites (for example an `<iframe>` with a remote address) cannot use the camera.
+
+> EXAMPLE
+>
+>     navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+>       .then(function (stream) {
+>         document.getElementById('video').srcObject = stream;
+>       })
+>       .catch(function (error) {
+>         console.log(error);
+>       });
+
+*Note: a field plug-in can show or process what the camera sees, but it still cannot save a photo as the field's answer. To work with a photo that another field in the form took, see `getSubmissionFileUrl()` above.*
 
 # Field-specific APIs
 
